@@ -5,7 +5,7 @@ class Node {
   }
 }
 
-class LinkedList {
+export class LinkedList {
   constructor(value) {
     // Creates a new NODE
     const newNode = new Node(value);
@@ -113,11 +113,11 @@ class LinkedList {
   }
 
   get(index) {
-    if (index < 0 || index >= this.length) {
+    if (index < 1 || index >= this.length) {
       return undefined;
     }
     let temp = this.head;
-    for (let i = 0; i < index; i++) {
+    for (let i = 1; i < index; i++) {
       temp = temp.next;
     }
     return temp;
@@ -166,7 +166,8 @@ class LinkedList {
     let next = temp.next;
     let prev = null;
 
-    for (let i = 0; i < this.length; i++) {
+    // for (let i = 0; i < this.length; i++) {
+    while (temp) {
       next = temp.next;
       temp.next = prev;
       prev = temp;
@@ -203,8 +204,14 @@ function test() {
 
   console.log("Original list:");
   myLinkedList.printList();
-  const middleNode = myLinkedList.findMiddleNode();
-  console.log(`\nMiddle node value: ${middleNode.value}`);
+  console.log("===========================");
+  console.log(myLinkedList.get(1));
+
+  // const rLL = myLinkedList.reverse();
+  // rLL.printList();
+
+  // const middleNode = myLinkedList.findMiddleNode();
+  // console.log(`\nMiddle node value: ${middleNode.value}`);
 }
 
 test();
