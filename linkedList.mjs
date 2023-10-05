@@ -1,4 +1,4 @@
-class Node {
+export class Node {
   constructor(value) {
     this.value = value;
     this.next = null;
@@ -187,6 +187,18 @@ export class LinkedList {
 
     return slow_ptr;
   }
+
+  partitionList(x) {
+    if(!this.head) return null;
+
+    const dummy1 = new Node(0);
+    const dummy2 = new Node(0);
+
+    let prev1 = dummy1;
+    let prev2 = dummy2;
+    let cp = this.head;
+    
+  }
 }
 
 function test() {
@@ -214,4 +226,4 @@ function test() {
   // console.log(`\nMiddle node value: ${middleNode.value}`);
 }
 
-test();
+// test();
